@@ -1,0 +1,17 @@
+print('-------执行前置脚本--------')
+aa = 199900
+mobile = my_functools.random_mobile()
+# 将手机号保存到全局环境变量中
+test.save_global_variable('mobile',mobile)
+token = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzE5OTA3MTYzLCJpYXQiOjE3MTk4MjA3NjMsImp0aSI6Ijc2YzA3NjNjMmIyYzQ1ZGQ5OTQwYWIzZWI2YWIzYWFhIiwidXNlcl9pZCI6NzkwfQ.3qdFdSTdv2omrFX3b1O8WhB46boDioqjcKxK_V_kTfQ'
+# 随机生成一个邮箱
+email = my_functools.random_email()
+test.save_global_variable('email',email)
+print(mobile)
+test.del_global_variable('username')
+print('当前的全局变量：',global_val)
+print('用例数据：',data)
+
+# 执行sql语句
+# res = db.aliyun.execute("select * from shop.users")
+# print('结果:',res)

@@ -1,0 +1,21 @@
+print('--------后置断言脚本----')
+print(aa)
+body = response.text
+print(body)
+# 通过jsonpath提取响应数据中的username
+# u = test.json_extract(response.json(),'$..username')
+# print(u)
+# 保存到当前测试环境数据中，
+# test.save_global_variable('uuu',u)
+# 通过正则表达式提取数据
+# uid = test.re_extract(response.json(),r"id': (\d+)")
+# 正则提取数据
+# em = test.re_extract(response.json(),r"email': '(.+?)'")
+# print('当前测试环境中的数据：',global_val)
+
+# 断言
+status = response.status_code
+token = test.json_extract(response.json(),'$..token')
+test.assertion([{'method':'相等','expected':200,'actual':status},{'method':'不相等','expected':'','actual':token}])
+# and test.assertion('不相等','0',token)
+
